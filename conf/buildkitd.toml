@@ -1,0 +1,10 @@
+[registry."docker.io"]
+#http = false
+#insecure = false
+#tlsconfigdir = ["/usr/local/share/ca-certificates/"]
+mirrors = ["fitregistry.fiberhome.com"]
+
+[registry."fitregistry.fiberhome.com"]
+http = false
+insecure = false
+tlsconfigdir = ["/usr/local/share/ca-certificates/"]
