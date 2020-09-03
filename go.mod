@@ -1,4 +1,4 @@
-module github.com/openfaas/openfaas-cloud/of-builder-dev
+module github.com/yozora-hitagi/of-builder
 
 go 1.13
 

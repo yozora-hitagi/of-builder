@@ -7,6 +7,9 @@ ARG ADDITIONAL_PACKAGE
 
 COPY --from=watchdog /fwatchdog /usr/bin/fwatchdog
 RUN chmod +x /usr/bin/fwatchdog
+
+RUN sed -i 's#://dl-cdn.alpinelinux.org#s://mirrors.aliyun.com#g' /etc/apk/repositories
+
 RUN apk --no-cache add ca-certificates ${ADDITIONAL_PACKAGE}
 
 # Add non root user
@@ -19,7 +22,7 @@ COPY requirements.txt   .
 
 RUN chown -R app /home/app && \
   mkdir -p /home/app/python && chown -R app /home/app
-USER app
+#USER app
 ENV PATH=$PATH:/home/app/.local/bin:/home/app/python/bin/
 ENV PYTHONPATH=$PYTHONPATH:/home/app/python
 
